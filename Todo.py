@@ -16,7 +16,7 @@ command = ''
 while True:
 	command = input(" ==> ")
 	if command == 'list':
-		with open('C:\\Users\\Si-ahmed\\AppData\\Local\\Programs\\TodoCmd\\todos.db') as f:
+		with open('todos.db') as f:
 			f.seek(0)
 			todos = f.readlines()
 			for x in range(len(todos)):
@@ -27,7 +27,7 @@ while True:
 	elif command == 'add':
 		todo = input('  What do you wanna do: ')
 		if todo != '' :
-			with open('C:\\Users\\Si-ahmed\\AppData\\Local\\Programs\\TodoCmd\\todos.db' , 'a') as f:
+			with open('todos.db' , 'a') as f:
 				f.write(todo + '\n')
 				print('Done type "list" to check your todos')
 		else : 
@@ -38,7 +38,7 @@ while True:
 		idx = input('  Which one(Number): ')
 		if idx != '':
 			todos.pop(int(idx))
-			with open('C:\\Users\\Si-ahmed\\AppData\\Local\\Programs\\TodoCmd\\todos.db' , 'w') as f:
+			with open('todos.db' , 'w') as f:
 				f.write(toString(todos))
 				print('Done type "list" to check your todos')
 		else : 
@@ -47,7 +47,7 @@ while True:
 #############################################################################
 	elif command == 'clear':
 		todos = []
-		with open('C:\\Users\\Si-ahmed\\AppData\\Local\\Programs\\TodoCmd\\todos.db' , 'w') as f:
+		with open('todos.db' , 'w') as f:
 				f.write('')
 				print('You are done ? good for you :)')
 #############################################################################
